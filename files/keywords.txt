@@ -1,0 +1,4 @@
+"openai",
+"technology",
+"gradle",
+"softball"
