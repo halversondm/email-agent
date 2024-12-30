@@ -1,432 +1,414 @@
 Delivered-To: daniel.m.halverson@gmail.com
-Received: by 2002:a05:7001:1490:b0:5e3:f6e1:2644 with SMTP id bf16csp3956290mac;
-        Mon, 23 Dec 2024 03:22:26 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IG+up80Bb55nvnLHlyaPBDokA/xpvW1mPs7bBn4L7G81feBXLkJbkZ2oBiRr0ZArbV+Clr3
-X-Received: by 2002:a05:620a:44ca:b0:7b7:12e:48eb with SMTP id af79cd13be357-7b9bac920cfmr2134469385a.17.1734952945852;
-        Mon, 23 Dec 2024 03:22:25 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1734952945; cv=none;
+Received: by 2002:a05:7001:1490:b0:5e3:f6e1:2644 with SMTP id bf16csp6194291mac;
+        Fri, 27 Dec 2024 03:22:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGV+JulSsH7oC4dnGzPb0/rVf2gyw8Vs4c9r7UgJEvvXL/D0T4z4AADP29QQr14ujqPlAmj
+X-Received: by 2002:ac8:7c4d:0:b0:467:94c9:24e1 with SMTP id d75a77b69052e-46a4a928089mr482454541cf.32.1735298536587;
+        Fri, 27 Dec 2024 03:22:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1735298536; cv=none;
         d=google.com; s=arc-20240605;
-        b=bZZ3nUdM2OdapE+6p4xFcDpPWBItORRBLugpAGsZKStXbctIfX1Upx0JlIjtoSi7Mv
-         /btSuXAvfPcawLCkkWzZyU15wOdJSSitAyXJP8f4qyjS4wUYPxvRpRBftN3KEBadVwRL
-         5ljsEIn6CFjLP4pfzj6aujJBbqQiNHl+H4HMBYK4NZePlz0qTS88+R4L811mnPIroAI4
-         wcTnZzDriQZMQIKiLbeE8yPSn7yhbCHHvrXX4xQdQD9dNQ2kkYedoQnHQoqL1C9hftHJ
-         LIpIEEaSvYcG5hhALu33/bPuRhhKOGPB80PP2p1DnGHB9pdaXHyRPDgEIzqQ9xKW24n/
-         rIwA==
+        b=FD5F241v0ICNCJaA/0ubuoqte7GfYTNluAtw3Xa6mw09h5nREp/PRlmqc+UdjMOc8y
+         XAUyJ45y05+N3ABel1oJ58lGL1QFv7gSbt/ZH3qic5s0lNmZlkULSBOhpI0EFs6ABhv6
+         ed2DxrcccsoSAoKfq5YrdPXehXnh0jlSvafoBbFeqSuZ+66WhnH9dWQDRTZfxqlY7rGF
+         tfkGGavFmo9TV8F52bzveXQFnMYdv0b0cqZ0aJqHSlstwYImLWqWVFnY3/5mfBL2Oiuy
+         EXaz3V/u/eDlvfpojO6hFAwE/KCEfob08n5T65WUdsu6Wh38ZY47mmMyDGaBKmWblVat
+         t07A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=feedback-id:message-id:date:mime-version:list-unsubscribe-post
          :list-unsubscribe:subject:to:from:dkim-signature:dkim-signature;
-        bh=+HA03xOUQACPzarEzR2eueumORx3kiL3dt7v3ch7OCQ=;
+        bh=YxbuJhOwertwfyrQVnrGjRTtMl96cEy+ayH8bUGO7as=;
         fh=8SqyMeId9zAyCmhpTgMhK4c8dMM4W9fI9zhT18DWuCA=;
-        b=akkPE1tD+LsiHQOUpvgpKDCq+TRwrFEotGrAMI09jE3A+F2uWVcor0pXqvBmQZlrZ3
-         xBi99KBh7IHeKzRwPrJc8zLHmew7Fz0S1g8WiplgOm/wuZbX4bjcLpfez/uvcpnN/3UL
-         cxB0mf3t9MgK8KShyrUn2sbOeKYO/8Vbt+2PTr1eFppv3KaqYx6JEOw9xLTi1KY+xva3
-         r6A8HlXLNnW1QBtSkuKbM3iDuKXV3rPtykfwTkpSBAZt7VykRLJwL+twQgwbd5fSmEw/
-         XiNRPyPtNlMKKPzum0R1GOZ5z098HDvR1o9VqCIhqPJq0/+i++vBvzkz+Ebqkc1cVyiA
-         740Q==;
+        b=ScrPNntKbrFGbzVU/sKbyLOWCGXHNh5CQmJiEzFyvilD8TRe32xidI13FbFGrhyB/T
+         SZpaqBZom+mznTLFnFzT9ZYnLVfdQ+6OXZ5AW2LMbh4r23LGPScnQazi+f56mM+1medy
+         7//GZrK1ODGJV6Rg/4roZSQfjg3fvEae5qrhjOWf42DI5HA77xowhGIOJTM9zWJEcL5E
+         RG86ff4w16BD1xjJl381hyVF6vJMLpRGi8adctwkfGLg/R6uW4TZ5WGYJ7ZvgwDTa1My
+         dKGSBV5yU1ycgJiCZz8vomtyeQaXpICyeEb1gVjI/xusgHBbUwR5Qa7u4Ax1BvdoQqMx
+         JSog==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@tldrnewsletter.com header.s=sioo5ufy44q7kswoxqlcbgcwkczxbk64 header.b=WKG2Jaqz;
-       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yn3pceSz;
-       spf=pass (google.com: domain of 01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000@dailyupdate.tldrnewsletter.com designates 54.240.77.28 as permitted sender) smtp.mailfrom=01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000@dailyupdate.tldrnewsletter.com;
+       dkim=pass header.i=@tldrnewsletter.com header.s=sioo5ufy44q7kswoxqlcbgcwkczxbk64 header.b=aXsWGJ1n;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=GKCvj9gR;
+       spf=pass (google.com: domain of 0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000@dailyupdate.tldrnewsletter.com designates 54.240.123.112 as permitted sender) smtp.mailfrom=0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000@dailyupdate.tldrnewsletter.com;
        dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=tldrnewsletter.com
-Return-Path: <01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000@dailyupdate.tldrnewsletter.com>
-Received: from a77-28.smtp-out.amazonses.com (a77-28.smtp-out.amazonses.com. [54.240.77.28])
-        by mx.google.com with ESMTPS id af79cd13be357-7b9ac4f2acdsi1129704285a.553.2024.12.23.03.22.25
+Return-Path: <0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000@dailyupdate.tldrnewsletter.com>
+Received: from a123-112.smtp-out.amazonses.com (a123-112.smtp-out.amazonses.com. [54.240.123.112])
+        by mx.google.com with ESMTPS id d75a77b69052e-46a3e6abaa8si214505321cf.196.2024.12.27.03.22.16
         for <daniel.m.halverson@gmail.com>
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 23 Dec 2024 03:22:25 -0800 (PST)
-Received-SPF: pass (google.com: domain of 01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000@dailyupdate.tldrnewsletter.com designates 54.240.77.28 as permitted sender) client-ip=54.240.77.28;
+        Fri, 27 Dec 2024 03:22:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000@dailyupdate.tldrnewsletter.com designates 54.240.123.112 as permitted sender) client-ip=54.240.123.112;
 Authentication-Results: mx.google.com;
-       dkim=pass header.i=@tldrnewsletter.com header.s=sioo5ufy44q7kswoxqlcbgcwkczxbk64 header.b=WKG2Jaqz;
-       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yn3pceSz;
-       spf=pass (google.com: domain of 01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000@dailyupdate.tldrnewsletter.com designates 54.240.77.28 as permitted sender) smtp.mailfrom=01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000@dailyupdate.tldrnewsletter.com;
+       dkim=pass header.i=@tldrnewsletter.com header.s=sioo5ufy44q7kswoxqlcbgcwkczxbk64 header.b=aXsWGJ1n;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=GKCvj9gR;
+       spf=pass (google.com: domain of 0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000@dailyupdate.tldrnewsletter.com designates 54.240.123.112 as permitted sender) smtp.mailfrom=0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000@dailyupdate.tldrnewsletter.com;
        dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=tldrnewsletter.com
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
 	s=sioo5ufy44q7kswoxqlcbgcwkczxbk64; d=tldrnewsletter.com;
-	t=1734952945;
+	t=1735298536;
 	h=From:To:Subject:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:Date:Message-ID:Content-Type;
-	bh=TiGv40C7AvoIbRGmeZpgDHszcpYFERJW+MFp/Z3ym3Y=;
-	b=WKG2Jaqz1JCO1uLRWUQvZuguJESxBVeWcx9wKjbmej/6xXA0iY5g90/DhF12zoCz
-	kVE54gsijLuioJ+J5wXyuogSVr/F6G9FkrcMfSb5oyZr6iy296oiq4iRavRP5jiwptB
-	zH//wa1RhT49udlQZydAtUdLwIxl6sZ9P2dnV7J4=
+	bh=iWCOGkTPQEuv+JwBjr7I5Aa5kTecK0dHhCVC0PGCD+E=;
+	b=aXsWGJ1nCF14IEkURTjq2qSPZ1HEM9niwg49DK708T5hDg/NkqZH7fze4LHjFKBg
+	CxbmyHluxoHRk+PLxIoc78ca6pfunKbyW/cBMweR6NcTQdOuyDRps/VRe/kGEQNVjXT
+	ac0RRiEtvDN4TUkIrlvMxKePTG3UIqi64nF9PLw8=
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
-	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1734952945;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1735298536;
 	h=From:To:Subject:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:Date:Message-ID:Content-Type:Feedback-ID;
-	bh=TiGv40C7AvoIbRGmeZpgDHszcpYFERJW+MFp/Z3ym3Y=;
-	b=Yn3pceSz6z5jEcZ0PfxtZznffxZ+Jp48buaQqLTQwAy+MLjrhZAtllRk0yLpKNZ8
-	gXy6sQ3xpVCSQQfBHK3+5PlOFmC6NFjXs/N8FkNO7B/1jFJ23I2eqllecEOKnSznq0v
-	2P2e8j2GAWNlKWHdyGQVyywTUCDAhn8LoUbx2wBw=
+	bh=iWCOGkTPQEuv+JwBjr7I5Aa5kTecK0dHhCVC0PGCD+E=;
+	b=GKCvj9gRkXU6xMPjr5iSX0bCaAp6FevuJ7SvY06tJkFIB+J+Bdki6xaEJO2gcmrD
+	yUw/Atz9Y+WunsAnZyCjxgffftE9KSv13oroOC6hftPWYI7vGAlKbnTiLrfS+QDYe7j
+	sZ561t0cseqss1ogIhQ6QC9tkOdQX0YALi5LSirU=
 From: TLDR <dan@tldrnewsletter.com>
 To: daniel.m.halverson@gmail.com
-Subject: OpenAI o3 =?utf-8?Q?=F0=9F=A4=96=2C?= Apple Face ID doorbell
- =?utf-8?Q?=F0=9F=9A=AA=2C?= TikTok open sources
- =?utf-8?Q?algo=F0=9F=93=B1?=
-X-Entity-Ref-Id: d0bd49c0-0bfe-4415-9ec6-fc15de49f311
-X-EmailOctopus-Parent-Id: eb259824-c0fd-11ef-a531-03d583030557
+Subject: OpenAI/Microsoft deal leak =?utf-8?Q?=F0=9F=92=B0=2C?= Chinese AI
+ catches up =?utf-8?Q?=F0=9F=A4=96=2C?= terminal web browser
+ =?utf-8?Q?=F0=9F=91=A8=E2=80=8D=F0=9F=92=BB?=
+X-Entity-Ref-Id: 1a300d55-8913-4d84-ad47-756d36f76521
+X-EmailOctopus-Parent-Id: eeca5de0-c425-11ef-8314-5b2b2d34e198
 X-EmailOctopus-Parent-Type-Id: campaign
 X-EmailOctopus-List-Id: cfa2d55a-b7be-11e8-a3c9-06b79b628af2
 X-EmailOctopus-List-Contact-Id: 502a46e6-96f7-11ea-a3d0-06b4694bee2a
-X-EmailOctopus-Started-Preparing-At: 2024-12-23T11:01:13+00:00
-X-EmailOctopus-Sent-At: 2024-12-23T11:22:25+00:00
+X-EmailOctopus-Started-Preparing-At: 2024-12-27T11:01:08+00:00
+X-EmailOctopus-Sent-At: 2024-12-27T11:22:15+00:00
 X-EmailOctopus-Team-Id: 66987ef2-4f4c-11e9-a3c9-06b79b628af2
 X-EmailOctopus-Version: 4
-List-Unsubscribe: <https://a.tldrnewsletter.com/unsubscribe?ep=1&l=cfa2d55a-b7be-11e8-a3c9-06b79b628af2&lc=502a46e6-96f7-11ea-a3d0-06b4694bee2a&p=eb259824-c0fd-11ef-a531-03d583030557&pt=campaign&pv=4&spa=1734951673&t=1734952945&s=49d846a390c100286e2ffe55a64c3f623b420a0dd1f1db621e8c58b2b257400a>
+List-Unsubscribe: <https://a.tldrnewsletter.com/unsubscribe?ep=1&l=cfa2d55a-b7be-11e8-a3c9-06b79b628af2&lc=502a46e6-96f7-11ea-a3d0-06b4694bee2a&p=eeca5de0-c425-11ef-8314-5b2b2d34e198&pt=campaign&pv=4&spa=1735297268&t=1735298535&s=48e47699029cd60db4db6a1fe5e3d8a044c56ec7bfee2ba2040a9c0cac8b5030>
 List-Unsubscribe-Post: List-Unsubscribe=One-Click
 X-EmailOctopus-Ses-Configuration-Set-Name: emailoctopus-a9f7b12f74f3c968d9408897fb35539c
 MIME-Version: 1.0
-Date: Mon, 23 Dec 2024 11:22:25 +0000
-Message-ID: <01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000@email.amazonses.com>
-Content-Type: multipart/alternative; boundary=2F7WE5aZ
+Date: Fri, 27 Dec 2024 11:22:15 +0000
+Message-ID: <0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000@email.amazonses.com>
+Content-Type: multipart/alternative; boundary=vDDuxR3L
 Feedback-ID: ::1.us-east-1.Dj5/7DYmgk+n1sSGGXSQSLIthSjNQ0MGtV5Dro1Tr8U=:AmazonSES
-X-SES-Outgoing: 2024.12.23-54.240.77.28
+X-SES-Outgoing: 2024.12.27-54.240.123.112
 
---2F7WE5aZ
+--vDDuxR3L
 Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: quoted-printable
 
-OpenAI's latest models are now available for public safety testing and
-re=
-search access. o3-mini will offer low, medium, and high processing
-speeds=
-=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
-=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
-=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
-=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
-=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
-=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+Microsoft and OpenAI's definition of artificial general intelligence
+(AGI=
+) is 'a system that can generate at least $100 billion in
+profits'.=C2=
 =A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
 =C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
 =8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
 =E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
 =A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
-=C2=A0
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0
 
 
  Sign Up [1] |Advertise [2]|View Online [3]=20
 
-=09=09TLDR=
-=20
+=09=09TLDR =
 
-TLDR 2024-12-23
+
+TLDR 2024-12-27
 
 =F0=9F=93=B1=20
 
 BIG TECH & STARTUPS
 
- OP=
-ENAI ANNOUNCES O3 AND O3-MINI, ITS NEXT SIMULATED REASONING MODELS
-(3 MIN=
-UTE READ) [4]=20
+ LEA=
+KED DOCUMENTS SHOW OPENAI HAS A VERY CLEAR DEFINITION OF =E2=80=98AGI'
+(3=
+ MINUTE READ) [4]=20
 
- OpenAI's latest AI 'reasoning models', o3 and o3-mini,=
- are now
-available for public safety testing and research access. The mod=
-el
-family was called 'o3' rather than 'o2' to avoid potential trademark=
+ Microsoft and OpenAI's definition of artificial ge=
+neral intelligence
+(AGI) is 'a system that can generate at least $100 bil=
+lion in
+profits'. The companies agreed on the definition in 2023 as part =
+of an
+agreement which had a clause that stated that OpenAI would stop
+a=
+llowing Microsoft to use any new technology it develops after AGI is
+achi=
+eved. OpenAI and Microsoft have been on diverging paths for some
+time now=
+. Microsoft needs its own proprietary tech and OpenAI needs
+more money. =
 
-conflicts with British telecom provider O2. o3-mini will offer low,
-me=
-dium, and high processing speeds, with the higher compute settings
-produc=
-ing better results. It outperforms o1 on the Codeforces
-benchmark.=20
 
+ DEEPSEEK-V3 IS NOW THE BEST OPEN SOURCE AI MODEL (3 MINUTE READ) [5]=
+=20
+
+ DeepSeek, a Chinese AI research lab, has released DeepSeek-V3, a
 =
- APPLE REPORTEDLY DEVELOPING NEW SMART HOME DOORBELL WITH SUPPORT FOR
-FAC=
-E ID (2 MINUTE READ) [5]=20
-
- Apple is rumored to be working on a new sma=
-rt home doorbell with
-advanced facial recognition. It will be able to int=
-egrate wirelessly
-with smart home locks and allow people to automatically=
- unlock their
-doors with just a face scan. Apple is expected to expand it=
-s reach in
-the smart home market significantly next year. It plans to rel=
-ease a
-new smart home control device that will attach to walls and
-pote=
-ntially a speaker base.=20
+Mixture-of-Experts model that features a total of 671B parameters. The
+mo=
+del was trained on 14.8 trillion tokens. It has been released on
+GitHub a=
+long with a detailed paper outlining its capabilities. The
+model outperfo=
+rmed Meta's flagship Llama 3.1 405B parameter model and
+many other closed=
+-source models on benchmark scores.=20
 
 =F0=9F=9A=80=20
 
-SCIENCE & FUTURISTIC TECHN=
-OLOGY
+SCIENCE & FUTU=
+RISTIC TECHNOLOGY
 
- WE'RE ABOUT TO FLY A SPACECRAFT INTO THE SUN FOR THE FIRST TIME=
- (4
-MINUTE READ) [6]=20
+ CHINA LAUNCHES 1ST SET OF SPACECRAFT FOR PLANNED 13=
+,000-SATELLITE
+BROADBAND CONSTELLATION (3 MINUTE READ) [6]=20
 
- The Parker Solar Probe will make its closest =
-approach yet to the Sun
-on Christmas Eve. It will fly into the solar atmo=
-sphere for the first
-time. It is estimated that the probe's heat shield w=
-ill have to endure
-temperatures in excess of 2,500 degrees Fahrenheit. Th=
-e mission is
-aimed at finding the birthplace of solar wind.=20
+ China l=
+aunched 10 internet satellites on a Long March 5B rocket
+earlier this mon=
+th. The satellites entered their predetermined orbits
+smoothly and the mi=
+ssion was a complete success. They are the first
+batch for Guowang, a bro=
+adband megaconstellation in low earth orbit
+(LEO) that will eventually co=
+nsist of nearly 13,000 spacecraft.
+Guowang will be one of two Chinese ver=
+sions of SpaceX's Starlink LEO
+megaconstellation.=20
 
- THE RI=
-SK OF CANCER FADES AS WE GET OLDER, AND WE MAY FINALLY KNOW WHY
-(3 MINUTE=
- READ) [7]=20
+ STARTUPS BEGIN G=
+EOENGINEERING THE SEA (11 MINUTE READ) [7]=20
 
- While the risk of cancer rises in our 60s and 70s, it dro=
-ps past the
-age of around 80. A study in older mice found that they had h=
-igher
-levels of a protein that caused cells to act as if they were defici=
-ent
-in iron, which in turn limited their regeneration rates, restricting=
+ Captura is a company that=
+ plans to electrochemically strip carbon
+dioxide out of the ocean, store =
+or use it, then return the water to
+the sea, where it will naturally abso=
+rb more carbon dioxide from the
+air. It will start pumping as much of the=
+ Pacific ocean as it can in a
+few months at Hawaii's Ke=C4=81hole Point. =
+Besides Captura, there are
+dozens of similar field trials and pilot proje=
+cts that will start
+scaling up their facilities in 2025.=20
 
-both healthy growth and cancerous tumors. The same processes were
-foun=
-d to be occurring in human cells too. Cell growth capabilities
-were boost=
-ed when levels of the protein were artificially lowered or
-iron was artif=
-icially increased.=20
-
+=
 =F0=9F=92=BB=20
 
-PROGRAMMING, DESIGN & DATA SCIE=
-NCE
+PROGRAMMING, DESIGN & DATA SCIENCE
 
- MONOLITH (GITHUB REPO) [8]=20
+ GHOSTTY (GITHUB=
+ REPO) [8]=20
 
- Monolith is a deep learning fra=
-mework for large scale recommendation
-modeling. It features collisionless=
- embedding tables, which guarantees
-unique representation for different I=
-D features, and real time
-training, which captures the latest hotspots an=
-d helps users to
-discover new interests rapidly. Monolith supports batch/=
-real-time
-training and serving.=20
+ Ghostty is a terminal emulator that doesn't force you to =
+choose
+between speed, features, or native UIs. It can be used as a drop-i=
+n
+replacement for your existing terminal emulator. In addition to being=
 
- BUILDING EFFECTIVE AGENTS (18 MINU=
-TE READ) [9]=20
+a standalone terminal emulator, Ghostty is also a C-compatible library=
 
- The most successful implementations of large language m=
-odels across
-industries were built with simple, composable patterns rathe=
-r than
-with complex frameworks or specialized libraries. This article gui=
-des
-readers on how to build effective AI agents. AI agents are systems
+for embedding a fast, feature-rich terminal emulator in any 3rd party
 =
-that dynamically direct their own processes and tool usage. They
-maintain=
- control over how they accomplish tasks. Most applications
-won't need age=
-nts - they are the best option when flexibility and
-model-driven decision=
--making are needed at scale.=20
+project.=20
+
+ ACTUAL WEB RENDERING IN TERMINAL (GITHUB REPO) [9]=20
+
+ a=
+writ is a full graphical web browser for Kitty terminal with mouse
+and ke=
+yboard support. It works best with Kitty v0.28 or newer. awrit
+can be use=
+d to display documentation from DevDocs, watch the changes
+from Vite come=
+ to life, create a tiled layout without a tiling window
+manager, and add =
+fancy UI using web technologies.=20
 
 =F0=9F=8E=81=20
 
 MISCELLANEOUS
-
- T=
-HE NEXT GREAT LEAP IN AI IS BEHIND SCHEDULE AND CRAZY EXPENSIVE (16
-MINUT=
-E READ) [10]=20
-
- OpenAI's GPT-5 project is expensive and behind schedule=
-. It isn't
-clear when, or if, it will work. Microsoft had expected to see=
- the
-model around mid-2024. There may not be enough data to train the mod=
-el
-to make it smart enough. OpenAI recently turned to a technique called=
-
-'reasoning' to make its large language models smarter. It just
-release=
-d a new reasoning model smarter than anything else the company
-has releas=
-ed before, but there is still no word on when GPT-5 is
-coming.=20
-
- GOO=
-GLE CEO SUNDAR PICHAI SAYS SEARCH GIANT HAS SLASHED MANAGER ROLES
-BY 10% =
-IN EFFICIENCY DRIVE (2 MINUTE READ) [11]=20
-
- Google has slashed a tenth =
-of its managerial roles since last year.
-Some of the managers were shifte=
-d to individual contributor roles and
-are no longer responsible for other=
- employees. The company had
-identified 'durable cost savings' as one of i=
-ts key goals for the
-year. Google this year has also slashed hundreds of =
-jobs across
-multiple divisions, including ad sales, core engineering, and=
- the
-hardware division responsible for the Pixel, Nest, and Fitbit.=20
 =
 
-=E2=9A=A1=20
+ THOUGHTS ON THE EVE OF AGI (12 MINUTE READ) [10]=20
+
+ The release of =
+o3 suggests the next few years are going to be insane.
+This post details =
+some predictions about how AI will change the world
+over the next few yea=
+rs. The predictions cover areas such as AI
+agents, the software engineeri=
+ng industry, science and research, war
+and societal chaos, what happens i=
+f AI goes rogue, and more.=20
+
+ WHY GOOGLE BOUGHT CHARACTER AI (1 MINUTE =
+READ) [11]=20
+
+ Google may have bought Character AI because Character AI =
+had figured
+out how to run its models without costing a fortune. Characte=
+r AI was
+able to serve millions of users without bleeding money. Google i=
+s now
+giving away flash models for free on AI Studio - this wouldn't be=
+
+possible without figuring out how to make inference really cheap.
+Pre-=
+training has hit diminishing returns, so companies are shifting
+toward ch=
+ain-of-thought prompting and inference-time optimizations.=20
+
+=E2=9A=
+=A1=20
 
 QUICK LINKS
 
- GOOGLE PROPOSES MULTIPLE CHANGES TO IT=
-S STRATEGY FOLLOWING ANTITRUST
-RULING (3 MINUTE READ) [12]=20
+ CHATGPT SEARCH VS. GOOGLE: A DEEP DIVE ANALYSIS=
+ OF 62 QUERIES (27
+MINUTE READ) [12]=20
 
- Google =
-has responded to the Justice Department's suggestions to curb
-its monopol=
-y in the search business with a proposal that allows
-flexibility in brows=
-er deals and preloading search engines while
-ensuring compliance measures=
-.=20
+ ChatGPT search is surprisingl=
+y competitive when it comes to
+informational queries, but Google is bette=
+r at almost all queries
+except content gap analysis.=20
 
- HOW BLOOM FILTERS MADE SQLITE 10X FASTER (5 MINUTE READ) [13]=20
+ EVEN APPLE WA=
+SN'T ABLE TO MAKE VR HEADSETS MAINSTREAM IN 2024 (5
+MINUTE READ) [13]=20
 =
 
- Bloom filters required minimal memory overhead, went well with
-SQLite=
-'s simple implementation, and worked within an existing query
-engine.=20
-=
+ While Apple keeps adding cool new software features, there still
+isn'=
+t an immediate, obvious reason to buy a Vision Pro.=20
 
- PALANTIR AND ANDURIL REPORTEDLY BUILDING A TECH CONSORTIUM TO BID ON
-=
-DEFENSE CONTRACTS (1 MINUTE READ) [14]=20
+ SCIENTISTS EXPLO=
+RE LONGEVITY DRUGS FOR DOGS THAT COULD ALSO =E2=80=98EXTEND
+HUMAN LIFE' (=
+5 MINUTE READ) [14]=20
 
- Palantir and Anduril are talk=
-ing to tech companies, including SpaceX,
-OpenAI, Saronic, and Scale AI, a=
-bout forming a consortium to bid on
-Pentagon contracts to challenge the d=
-ominance of 'prime' defense
-contractors like Lockheed Martin, Raytheon, a=
-nd Boeing.=20
+ Loyal, a US biotech start-up, plans to release L=
+OY-002, a pill that
+could give dogs a minimum of one extra year of health=
+y life, early
+next year.=20
 
- ARE AMAZON'S DRONES FINALLY READY FOR PRIME TIME? (17 MIN=
-UTE READ)
-[15]=20
+ SECONDS SINCE THE EPOCH (6 MINUTE READ) [=
+15]=20
 
- Amazon hopes to one day deliver millions of package=
-s to customers in
-30 minutes or less using its drone delivery service. =
+ POSIX time assumes the length of the day is 86,400 seconds, whic=
+h is
+not always true.=20
+
+ SOME NOTES ON THE DEEPSEEK-V3 TECHNICAL REPO=
+RT :) (2 MINUTE READ)
+[16]=20
+
+ DeepSeek-V3's training only cost $5.576=
+ million - it took around 55
+days on a 2048xH800 cluster.=20
+
+ DNS NAME=
+SERVERS (19 MINUTE READ) [17]=20
+
+ The optimal approach for a domain when=
+ considering both performance
+and operational resilience is for the domai=
+n to be served by two
+distinct dual-stack diverse anycast nameservers. =
 
 
- HOW TO MAKE LLMS SHUT UP (5 MINUTE READ) [16]=20
+Love TLDR? Tell your friends and get rewards!
 
- A clustering te=
-chnique helped Greptile reduce the number of comments
-that its AI was gen=
-erating.=20
+ Share your referr=
+al link below with friends to get free TLDR swag!=20
 
- IN PRAISE OF THE HUNDRED PAGE IDEA (3 MINUTE READ) [17]=20
-=
+ https://refer.tldr=
+.tech/113accd9/ [18]=20
 
- 100 pages is about the perfect size for a book - it lets ideas be
-sub=
-stantial, but not substantiated to death.=20
+=09=09 Track your referrals here. [19]=20
 
-Love TLDR? Tell your friend=
-s and get rewards!
+Wan=
+t to advertise in TLDR? =F0=9F=93=B0
 
- Share your referral link below with friends to get=
- free TLDR swag!=20
-
- https://refer.tldr.tech/113accd9/ [18]=20
-
-=09=09=
- Track your referrals here. [19]=20
-
-Want to advertise in TLDR? =
-=F0=9F=93=B0
-
- If your company is interested in reaching an audience of=
- tech
-executives, decision-makers and engineers, you may want to ADVERTIS=
-E
+ If your company is interested in=
+ reaching an audience of tech
+executives, decision-makers and engineers, =
+you may want to ADVERTISE
 WITH US [20].=20
 
- If you have any comments or feedback, just respond=
- to this email!=20
+ If you have any comments o=
+r feedback, just respond to this email!=20
 
 Thanks for reading,=20
-Dan Ni & Stephen Flanders=20
-=
+Dan Ni=
+ & Stephen Flanders=20
 
-If you don't want to receive future editions of TLDR, please
-unsubscri=
-be from TLDR [21] or manage all of your TLDR newsletter
-subscriptions [22=
-].=20
+If you don't want to receive future editions of T=
+LDR, please
+unsubscribe from TLDR [21] or manage all of your TLDR newslet=
+ter
+subscriptions [22].=20
 
 =20
 
 Links:
 ------
-[1] https://tldr.tech/signup?utm_source=
-=3Dtldr
-[2] https://advertise.tldr.tech/?utm_source=3Dtldr&utm_medium=3Dn=
-ewsletter&utm_campaign=3Dadvertisetopnav
-[3] https://a.tldrnewsletter.com=
-/web-version?ep=3D1&lc=3D502a46e6-96f7-11ea-a3d0-06b4694bee2a&p=3Deb259824-=
-c0fd-11ef-a531-03d583030557&pt=3Dcampaign&t=3D1734952945&s=3Dd7aa8a35d9829f=
-30c9f10ce20c01b0d99fe02fc010a7d6f374ef3cbdd970ef06
-[4] https://arstechnic=
-a.com/information-technology/2024/12/openai-announces-o3-and-o3-mini-its-ne=
-xt-simulated-reasoning-models/?utm_source=3Dtldrnewsletter
-[5] https://9t=
-o5mac.com/2024/12/22/apple-face-id-doorbell-bloomberg-report/?utm_source=3D=
-tldrnewsletter
-[6] https://arstechnica.com/space/2024/12/were-about-to-fl=
-y-a-spacecraft-into-the-sun-for-the-first-time/?utm_source=3Dtldrnewsletter=
+[1] https://tldr.t=
+ech/signup?utm_source=3Dtldr
+[2] https://advertise.tldr.tech/?utm_source=
+=3Dtldr&utm_medium=3Dnewsletter&utm_campaign=3Dadvertisetopnav
+[3] https:=
+//a.tldrnewsletter.com/web-version?ep=3D1&lc=3D502a46e6-96f7-11ea-a3d0-06b4=
+694bee2a&p=3Deeca5de0-c425-11ef-8314-5b2b2d34e198&pt=3Dcampaign&t=3D1735298=
+535&s=3Da7553c0b16308c60d13b899c4692b30b7c843ec2a7c802c47cbb7d40e1e8a471
+=
+[4] https://gizmodo.com/leaked-documents-show-openai-has-a-very-clear-defin=
+ition-of-agi-2000543339?utm_source=3Dtldrnewsletter
+[5] https://analytics=
+indiamag.com/ai-news-updates/deepseek-v3-is-the-best-open-source-ai-model/?=
+utm_source=3Dtldrnewsletter
+[6] https://www.space.com/space-exploration/l=
+aunches-spacecraft/china-launches-1st-set-of-spacecraft-for-planned-13-000-=
+satellite-broadband-constellation-photo?utm_source=3Dtldrnewsletter
+[7] h=
+ttps://spectrum.ieee.org/ocean-carbon-removal?utm_source=3Dtldrnewsletter=
 
-[7] https://www.sciencealert.com/the-risk-of-cancer-fades-as-we-get-olde=
-r-and-we-may-finally-know-why?utm_source=3Dtldrnewsletter
-[8] https://git=
-hub.com/bytedance/monolith?utm_source=3Dtldrnewsletter
-[9] https://www.an=
-thropic.com/research/building-effective-agents?utm_source=3Dtldrnewsletter=
+[8] https://github.com/ghostty-org/ghostty?utm_source=3Dtldrnewsletter=
 
-[10] https://links.tldrnewsletter.com/Sg6ozL
-[11] https://nypost.com/2=
-024/12/20/business/google-ceo-sundar-pichai-says-company-slashed-manager-ro=
-les-by-10/?utm_source=3Dtldrnewsletter
-[12] https://www.androidpolice.com=
-/google-solutions-response-doj-proposal-12-24/?utm_source=3Dtldrnewsletter=
-
-[13] https://avi.im/blag/2024/sqlite-past-present-future/?utm_source=3Dt=
-ldrnewsletter
-[14] https://techcrunch.com/2024/12/22/palantir-and-anduril=
--reportedly-building-a-tech-consortium-to-bid-on-defense-contracts/?utm_sou=
-rce=3Dtldrnewsletter
-[15] https://links.tldrnewsletter.com/gy78F5
-[16] =
-https://www.greptile.com/blog/make-llms-shut-up?utm_source=3Dtldrnewsletter=
-
-[17] https://tracydurnell.com/2024/12/17/in-praise-of-the-hundred-page-i=
-dea/?utm_source=3Dtldrnewsletter
-[18] https://refer.tldr.tech/113accd9/=
-
-[19] https://hub.sparklp.co/sub_37eb506c46bc/1
-[20] https://advertise.=
-tldr.tech/?utm_source=3Dtldr&utm_medium=3Dnewsletter&utm_campaign=3Dadverti=
-secta
-[21] https://a.tldrnewsletter.com/unsubscribe?ep=3D1&l=3Dcfa2d55a-b=
-7be-11e8-a3c9-06b79b628af2&lc=3D502a46e6-96f7-11ea-a3d0-06b4694bee2a&p=3Deb=
-259824-c0fd-11ef-a531-03d583030557&pt=3Dcampaign&pv=3D4&spa=3D1734951673&t=
-=3D1734952945&s=3D49d846a390c100286e2ffe55a64c3f623b420a0dd1f1db621e8c58b2b=
-257400a
-[22] https://tldr.tech/tech/manage?email=3Ddaniel.m.halverson%40g=
-mail.com
---2F7WE5aZ
+[9] https://github.com/chase/awrit?utm_source=3Dtldrnewsletter
+[10] ht=
+tps://threadreaderapp.com/thread/1871946968148439260.html?utm_source=3Dtldr=
+newsletter
+[11] https://manassaloi.com/2024/12/23/character-ai-goole.html=
+?utm_source=3Dtldrnewsletter
+[12] https://searchengineland.com/chatgpt-se=
+arch-vs-google-analysis-449676?utm_source=3Dtldrnewsletter
+[13] https://w=
+ww.theverge.com/24303262/apple-vision-pro-vr-mainstream-meta-glasses?utm_so=
+urce=3Dtldrnewsletter
+[14] https://www.theguardian.com/science/2024/dec/2=
+6/scientists-explore-longevity-drugs-for-dogs-that-could-also-extend-human-=
+life?utm_source=3Dtldrnewsletter
+[15] https://aphyr.com/posts/378-seconds=
+-since-the-epoch?utm_source=3Dtldrnewsletter
+[16] https://threadreaderapp=
+.com/thread/1872276861675286864.html?utm_source=3Dtldrnewsletter
+[17] htt=
+ps://www.potaroo.net/ispcol/2024-12/nameservers.html?utm_source=3Dtldrnewsl=
+etter
+[18] https://refer.tldr.tech/113accd9/
+[19] https://hub.sparklp.c=
+o/sub_37eb506c46bc/1
+[20] https://advertise.tldr.tech/?utm_source=3Dtldr&=
+utm_medium=3Dnewsletter&utm_campaign=3Dadvertisecta
+[21] https://a.tldrne=
+wsletter.com/unsubscribe?ep=3D1&l=3Dcfa2d55a-b7be-11e8-a3c9-06b79b628af2&lc=
+=3D502a46e6-96f7-11ea-a3d0-06b4694bee2a&p=3Deeca5de0-c425-11ef-8314-5b2b2d3=
+4e198&pt=3Dcampaign&pv=3D4&spa=3D1735297268&t=3D1735298535&s=3D48e47699029c=
+d60db4db6a1fe5e3d8a044c56ec7bfee2ba2040a9c0cac8b5030
+[22] https://tldr.te=
+ch/tech/manage?email=3Ddaniel.m.halverson%40gmail.com
+--vDDuxR3L
 Content-Type: text/html; charset=utf-8
 Content-Transfer-Encoding: quoted-printable
 
@@ -576,22 +558,23 @@ ant;
 
 
 
-<div style=3D"display: none; max-height: 0px; overflow: hidden;">OpenAI&#03=
-9;s latest models are now available for public safety testing and research =
-access. o3-mini will offer low, medium, and high processing speeds&nbsp;=E2=
-=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
-=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
-=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
-=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
-=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
-=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
-sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
-sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
-sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
-sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
-sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;</div>
 
 
+
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">Microsoft =
+and OpenAI&#039;s definition of artificial general intelligence (AGI) is &#=
+039;a system that can generate at least $100 billion in profits&#039;.&nbsp=
+;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp=
+;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp=
+;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp=
+;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp=
+;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp=
+;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;</div>
 
 
 <div style=3D"display: none; max-height: 0px; overflow: hidden;">
@@ -618,22 +601,22 @@ cing=3D"0" width=3D"100%"><tbody><tr><td class=3D"container" style=3D"paddi=
 ng: 15px 15px;">
 <div style=3D"text-align: center;">
 <span style=3D"margin-right: 0px;"><a href=3D"https://tracking.tldrnewslett=
-er.com/CL0/https:%2F%2Ftldr.tech%2Fsignup%3Futm_source=3Dtldr/1/01000193f34=
-10743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000/vc8MFir29H8q-8rzoCOrdTHnv=
-LJE3CacwWMUaImYI3c=3D384" rel=3D"noopener noreferrer" target=3D"_blank"><sp=
+er.com/CL0/https:%2F%2Ftldr.tech%2Fsignup%3Futm_source=3Dtldr/1/0100019407d=
+a5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000/1SyL60GRu4La4lazzwHAXr9lH=
+q0ecgrHJsAb7Dgcg5A=3D385" rel=3D"noopener noreferrer" target=3D"_blank"><sp=
 an>Sign Up</span></a>
 <span>|</span><span style=3D"margin-right: 2px; margin-left: 2px;"><a href=
 =3D"https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech=
 %2F%3Futm_source=3Dtldr%26utm_medium=3Dnewsletter%26utm_campaign=3Dadvertis=
-etopnav/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000/V_BR=
-fPWGwnjnusK-lbjMfTL44UMxLdJDsGO53X5IbCs=3D384" rel=3D"noopener noreferrer" =
+etopnav/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000/gg73=
+5JcO2FISUDgya9uGyt6mF7EkS_mskDlYn9oAePg=3D385" rel=3D"noopener noreferrer" =
 target=3D"_blank"><span>Advertise</span></a></span><span>|</span><span styl=
 e=3D"margin-left: 2px;"><a href=3D"https://tracking.tldrnewsletter.com/CL0/=
 https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=3D1%26lc=3D502a46e6-96f=
-7-11ea-a3d0-06b4694bee2a%26p=3Deb259824-c0fd-11ef-a531-03d583030557%26pt=3D=
-campaign%26t=3D1734952945%26s=3Dd7aa8a35d9829f30c9f10ce20c01b0d99fe02fc010a=
-7d6f374ef3cbdd970ef06/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92d=
-c3-000000/4gsjhyrcbATSKdl5PHiZSibNypbcCZnrxPFrb5CQb7E=3D384"><span>View Onl=
+7-11ea-a3d0-06b4694bee2a%26p=3Deeca5de0-c425-11ef-8314-5b2b2d34e198%26pt=3D=
+campaign%26t=3D1735298535%26s=3Da7553c0b16308c60d13b899c4692b30b7c843ec2a7c=
+802c47cbb7d40e1e8a471/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda7=
+5e-000000/t8z_CtfkSfESlqKVnyZdIb9F0vQ_WS6s2LsjGssAF8k=3D385"><span>View Onl=
 ine</span></a></span>
 <br>
 </span></div>
@@ -663,7 +646,7 @@ cing=3D"0" width=3D"100%"><tbody></tbody></table>
 ">
 <div style=3D"text-align: center;">
 
-<h1><strong>TLDR <span id=3D"date">2024-12-23</span></strong></h1>
+<h1><strong>TLDR <span id=3D"date">2024-12-27</span></strong></h1>
 </div>
 </td></tr></tbody></table>
 </td></tr></tbody></table>
@@ -703,25 +686,26 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Farstechnica.com%2Finformation-technology%2F2024%2F12%2F=
-openai-announces-o3-and-o3-mini-its-next-simulated-reasoning-models%2F%3Fut=
-m_source=3Dtldrnewsletter/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65b=
-e92dc3-000000/l_Q06dPTxlFCbEtYDlMx2IJOfoz7W0aDaxxrwj07HZY=3D384">
+com/CL0/https:%2F%2Fgizmodo.com%2Fleaked-documents-show-openai-has-a-very-c=
+lear-definition-of-agi-2000543339%3Futm_source=3Dtldrnewsletter/1/010001940=
+7da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000/y-FOrIgHU9vxBXt0LkjoRF4=
+05q-kHjin4dvnsw7esb4=3D385">
                                     <span>
-                                        <strong>OpenAI announces o3 and o3-=
-mini, its next simulated reasoning models (3 minute read)</strong>
+                                        <strong>Leaked Documents Show OpenA=
+I Has a Very Clear Definition of =E2=80=98AGI' (3 minute read)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    OpenAI's latest AI 'reasoning models', =
-o3 and o3-mini, are now available for public safety testing and research ac=
-cess. The model family was called 'o3' rather than 'o2' to avoid potential =
-trademark conflicts with British telecom provider O2. o3-mini will offer lo=
-w, medium, and high processing speeds, with the higher compute settings pro=
-ducing better results. It outperforms o1 on the Codeforces benchmark.
+                                    Microsoft and OpenAI's definition of ar=
+tificial general intelligence (AGI) is 'a system that can generate at least=
+ $100 billion in profits'. The companies agreed on the definition in 2023 a=
+s part of an agreement which had a clause that stated that OpenAI would sto=
+p allowing Microsoft to use any new technology it develops after AGI is ach=
+ieved. OpenAI and Microsoft have been on diverging paths for some time now.=
+ Microsoft needs its own proprietary tech and OpenAI needs more money.
                                 </span>
 </span>
 </div>
@@ -733,26 +717,25 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2F9to5mac.com%2F2024%2F12%2F22%2Fapple-face-id-doorbell-b=
-loomberg-report%2F%3Futm_source=3Dtldrnewsletter/1/01000193f3410743-cd94f93=
-e-ba03-426f-ac2d-f8d65be92dc3-000000/0-8Q4sKgx2_gJniMB7gXzuarGGsfocfWTkL2Gq=
-as-vc=3D384">
+com/CL0/https:%2F%2Fanalyticsindiamag.com%2Fai-news-updates%2Fdeepseek-v3-i=
+s-the-best-open-source-ai-model%2F%3Futm_source=3Dtldrnewsletter/1/01000194=
+07da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000/p_ZY47rS20VT_-jvfjVTUA=
+KfKtDmjoBc3Ud6ahFyaR8=3D385">
                                     <span>
-                                        <strong>Apple reportedly developing=
- new smart home doorbell with support for Face ID (2 minute read)</strong>
+                                        <strong>DeepSeek-V3 is Now The Best=
+ Open Source AI Model (3 minute read)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    Apple is rumored to be working on a new=
- smart home doorbell with advanced facial recognition. It will be able to i=
-ntegrate wirelessly with smart home locks and allow people to automatically=
- unlock their doors with just a face scan. Apple is expected to expand its =
-reach in the smart home market significantly next year. It plans to release=
- a new smart home control device that will attach to walls and potentially =
-a speaker base.
+                                    DeepSeek, a Chinese AI research lab, ha=
+s released DeepSeek-V3, a Mixture-of-Experts model that features a total of=
+ 671B parameters. The model was trained on 14.8 trillion tokens. It has bee=
+n released on GitHub along with a detailed paper outlining its capabilities=
+. The model outperformed Meta's flagship Llama 3.1 405B parameter model and=
+ many other closed-source models on benchmark scores.
                                 </span>
 </span>
 </div>
@@ -791,24 +774,28 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Farstechnica.com%2Fspace%2F2024%2F12%2Fwere-about-to-fly=
--a-spacecraft-into-the-sun-for-the-first-time%2F%3Futm_source=3Dtldrnewslet=
-ter/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000/yJSHgZKP=
-nhYPajxOhu3ldNxEN8LCGJFph_JguwW44I0=3D384">
+com/CL0/https:%2F%2Fwww.space.com%2Fspace-exploration%2Flaunches-spacecraft=
+%2Fchina-launches-1st-set-of-spacecraft-for-planned-13-000-satellite-broadb=
+and-constellation-photo%3Futm_source=3Dtldrnewsletter/1/0100019407da5236-ce=
+588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000/T9CWakc2QxVfdDx4FTTgaTFGQ2uLX8mzK=
+9Q4SE9KfyE=3D385">
                                     <span>
-                                        <strong>We're about to fly a spacec=
-raft into the Sun for the first time (4 minute read)</strong>
+                                        <strong>China launches 1st set of s=
+pacecraft for planned 13,000-satellite broadband constellation (3 minute re=
+ad)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    The Parker Solar Probe will make its cl=
-osest approach yet to the Sun on Christmas Eve. It will fly into the solar =
-atmosphere for the first time. It is estimated that the probe's heat shield=
- will have to endure temperatures in excess of 2,500 degrees Fahrenheit. Th=
-e mission is aimed at finding the birthplace of solar wind.
+                                    China launched 10 internet satellites o=
+n a Long March 5B rocket earlier this month. The satellites entered their p=
+redetermined orbits smoothly and the mission was a complete success. They a=
+re the first batch for Guowang, a broadband megaconstellation in low earth =
+orbit (LEO) that will eventually consist of nearly 13,000 spacecraft. Guowa=
+ng will be one of two Chinese versions of SpaceX's Starlink LEO megaconstel=
+lation.
                                 </span>
 </span>
 </div>
@@ -820,27 +807,25 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Fwww.sciencealert.com%2Fthe-risk-of-cancer-fades-as-we-g=
-et-older-and-we-may-finally-know-why%3Futm_source=3Dtldrnewsletter/1/010001=
-93f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000/TNcdGV_Yta4LhT0gx6qD=
-MuPAccfMyNAP-uWklM78uao=3D384">
+com/CL0/https:%2F%2Fspectrum.ieee.org%2Focean-carbon-removal%3Futm_source=
+=3Dtldrnewsletter/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-0=
+00000/FlyQAPB0MpcIiNrZRNZGFv2Uitfw5LEP5LKgHJvjky8=3D385">
                                     <span>
-                                        <strong>The Risk of Cancer Fades as=
- We Get Older, And We May Finally Know Why (3 minute read)</strong>
+                                        <strong>Startups Begin Geoengineeri=
+ng the Sea (11 minute read)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    While the risk of cancer rises in our 6=
-0s and 70s, it drops past the age of around 80. A study in older mice found=
- that they had higher levels of a protein that caused cells to act as if th=
-ey were deficient in iron, which in turn limited their regeneration rates, =
-restricting both healthy growth and cancerous tumors. The same processes we=
-re found to be occurring in human cells too. Cell growth capabilities were =
-boosted when levels of the protein were artificially lowered or iron was ar=
-tificially increased.
+                                    Captura is a company that plans to elec=
+trochemically strip carbon dioxide out of the ocean, store or use it, then =
+return the water to the sea, where it will naturally absorb more carbon dio=
+xide from the air. It will start pumping as much of the Pacific ocean as it=
+ can in a few months at Hawaii's Ke=C4=81hole Point. Besides Captura, there=
+ are dozens of similar field trials and pilot projects that will start scal=
+ing up their facilities in 2025.
                                 </span>
 </span>
 </div>
@@ -878,24 +863,24 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Fgithub.com%2Fbytedance%2Fmonolith%3Futm_source=3Dtldrne=
-wsletter/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000/okX=
-KrAjZlljBY-rxK2UdkdoiOEhNH1MKbSuUFGA-vlM=3D384">
+com/CL0/https:%2F%2Fgithub.com%2Fghostty-org%2Fghostty%3Futm_source=3Dtldrn=
+ewsletter/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000/s5=
+fsxQCDt0-2h0yQRbu9nXgqqJoRuMyxGS7rWRresRw=3D385">
                                     <span>
-                                        <strong>Monolith (GitHub Repo)</str=
-ong>
+                                        <strong>Ghostty (GitHub Repo)</stro=
+ng>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    Monolith is a deep learning framework f=
-or large scale recommendation modeling. It features collisionless embedding=
- tables, which guarantees unique representation for different ID features, =
-and real time training, which captures the latest hotspots and helps users =
-to discover new interests rapidly. Monolith supports batch/real-time traini=
-ng and serving.
+                                    Ghostty is a terminal emulator that doe=
+sn't force you to choose between speed, features, or native UIs. It can be =
+used as a drop-in replacement for your existing terminal emulator. In addit=
+ion to being a standalone terminal emulator, Ghostty is also a C-compatible=
+ library for embedding a fast, feature-rich terminal emulator in any 3rd pa=
+rty project.
                                 </span>
 </span>
 </div>
@@ -907,26 +892,23 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Fwww.anthropic.com%2Fresearch%2Fbuilding-effective-agent=
-s%3Futm_source=3Dtldrnewsletter/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-=
-f8d65be92dc3-000000/r7h_j37iBrgumKhSHKJSUUytb_eIxE1AWq2kKU2ghMQ=3D384">
+com/CL0/https:%2F%2Fgithub.com%2Fchase%2Fawrit%3Futm_source=3Dtldrnewslette=
+r/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000/iN2syMyAS3=
+USrau0t_XVLwa56nBufbc7-RLtkABwWu8=3D385">
                                     <span>
-                                        <strong>Building effective agents (=
-18 minute read)</strong>
+                                        <strong>Actual Web Rendering in Ter=
+minal (GitHub Repo)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    The most successful implementations of =
-large language models across industries were built with simple, composable =
-patterns rather than with complex frameworks or specialized libraries. This=
- article guides readers on how to build effective AI agents. AI agents are =
-systems that dynamically direct their own processes and tool usage. They ma=
-intain control over how they accomplish tasks. Most applications won't need=
- agents - they are the best option when flexibility and model-driven decisi=
-on-making are needed at scale.
+                                    awrit is a full graphical web browser f=
+or Kitty terminal with mouse and keyboard support. It works best with Kitty=
+ v0.28 or newer. awrit can be used to display documentation from DevDocs, w=
+atch the changes from Vite come to life, create a tiled layout without a ti=
+ling window manager, and add fancy UI using web technologies.
                                 </span>
 </span>
 </div>
@@ -963,25 +945,23 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FSg6ozL/1/01000193f3410743-cd=
-94f93e-ba03-426f-ac2d-f8d65be92dc3-000000/jrh5VeXtvkztM0FVxR6XqWE3EJhZMYTT8=
-21FIVSEFZ0=3D384">
+com/CL0/https:%2F%2Fthreadreaderapp.com%2Fthread%2F1871946968148439260.html=
+%3Futm_source=3Dtldrnewsletter/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b=
+8d1faeda75e-000000/2qg91fhmYmrH6yYpwCp_7B5_7VK8HZwqQ5TwZWyu440=3D385">
                                     <span>
-                                        <strong>The Next Great Leap in AI I=
-s Behind Schedule and Crazy Expensive (16 minute read)</strong>
+                                        <strong>Thoughts on the eve of AGI =
+(12 minute read)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    OpenAI's GPT-5 project is expensive and=
- behind schedule. It isn't clear when, or if, it will work. Microsoft had e=
-xpected to see the model around mid-2024. There may not be enough data to t=
-rain the model to make it smart enough. OpenAI recently turned to a techniq=
-ue called 'reasoning' to make its large language models smarter. It just re=
-leased a new reasoning model smarter than anything else the company has rel=
-eased before, but there is still no word on when GPT-5 is coming.
+                                    The release of o3 suggests the next few=
+ years are going to be insane. This post details some predictions about how=
+ AI will change the world over the next few years. The predictions cover ar=
+eas such as AI agents, the software engineering industry, science and resea=
+rch, war and societal chaos, what happens if AI goes rogue, and more.
                                 </span>
 </span>
 </div>
@@ -993,27 +973,25 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Fnypost.com%2F2024%2F12%2F20%2Fbusiness%2Fgoogle-ceo-sun=
-dar-pichai-says-company-slashed-manager-roles-by-10%2F%3Futm_source=3Dtldrn=
-ewsletter/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000/tn=
-9qzjxeY7JC8snv7_1-uA0ZPcSlfPQkQYouSKE1PM8=3D384">
+com/CL0/https:%2F%2Fmanassaloi.com%2F2024%2F12%2F23%2Fcharacter-ai-goole.ht=
+ml%3Futm_source=3Dtldrnewsletter/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33=
+-b8d1faeda75e-000000/fm1xt5DxSdaqigmDcubcsVEaOmunYi0aySFRbHFqqCs=3D385">
                                     <span>
-                                        <strong>Google CEO Sundar Pichai sa=
-ys search giant has slashed manager roles by 10% in efficiency drive (2 min=
-ute read)</strong>
+                                        <strong>Why Google Bought Character=
+ AI (1 minute read)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    Google has slashed a tenth of its manag=
-erial roles since last year. Some of the managers were shifted to individua=
-l contributor roles and are no longer responsible for other employees. The =
-company had identified 'durable cost savings' as one of its key goals for t=
-he year. Google this year has also slashed hundreds of jobs across multiple=
- divisions, including ad sales, core engineering, and the hardware division=
- responsible for the Pixel, Nest, and Fitbit.
+                                    Google may have bought Character AI bec=
+ause Character AI had figured out how to run its models without costing a f=
+ortune. Character AI was able to serve millions of users without bleeding m=
+oney. Google is now giving away flash models for free on AI Studio - this w=
+ouldn't be possible without figuring out how to make inference really cheap=
+. Pre-training has hit diminishing returns, so companies are shifting towar=
+d chain-of-thought prompting and inference-time optimizations.
                                 </span>
 </span>
 </div>
@@ -1051,23 +1029,22 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Fwww.androidpolice.com%2Fgoogle-solutions-response-doj-p=
-roposal-12-24%2F%3Futm_source=3Dtldrnewsletter/1/01000193f3410743-cd94f93e-=
-ba03-426f-ac2d-f8d65be92dc3-000000/iPH4iTkobi9v9Tiohh3CLXrTGcuxOegsFmdOD6Sr=
-e4U=3D384">
+com/CL0/https:%2F%2Fsearchengineland.com%2Fchatgpt-search-vs-google-analysi=
+s-449676%3Futm_source=3Dtldrnewsletter/1/0100019407da5236-ce588a2e-dfc5-4e7=
+1-8b33-b8d1faeda75e-000000/kmwJueUhVqUSekepjC8P6nbyRAFbykH-euM92acxzcA=3D38=
+5">
                                     <span>
-                                        <strong>Google proposes multiple ch=
-anges to its strategy following antitrust ruling (3 minute read)</strong>
+                                        <strong>ChatGPT search vs. Google: =
+A deep dive analysis of 62 queries (27 minute read)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    Google has responded to the Justice Dep=
-artment's suggestions to curb its monopoly in the search business with a pr=
-oposal that allows flexibility in browser deals and preloading search engin=
-es while ensuring compliance measures.
+                                    ChatGPT search is surprisingly competit=
+ive when it comes to informational queries, but Google is better at almost =
+all queries except content gap analysis.
                                 </span>
 </span>
 </div>
@@ -1079,21 +1056,22 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Favi.im%2Fblag%2F2024%2Fsqlite-past-present-future%2F%3F=
-utm_source=3Dtldrnewsletter/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d6=
-5be92dc3-000000/EMIVrNYA3kFdc6eYLGV2-AVZ3KBo9Qdy-Ze8SODpKMo=3D384">
+com/CL0/https:%2F%2Fwww.theverge.com%2F24303262%2Fapple-vision-pro-vr-mains=
+tream-meta-glasses%3Futm_source=3Dtldrnewsletter/1/0100019407da5236-ce588a2=
+e-dfc5-4e71-8b33-b8d1faeda75e-000000/rskEFRojN0Ck6KEztIidioR0ztcpWg0Cy2CBsm=
+AjJ9A=3D385">
                                     <span>
-                                        <strong>How bloom filters made SQLi=
-te 10x faster (5 minute read)</strong>
+                                        <strong>Even Apple wasn't able to m=
+ake VR headsets mainstream in 2024 (5 minute read)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    Bloom filters required minimal memory o=
-verhead, went well with SQLite's simple implementation, and worked within a=
-n existing query engine.
+                                    While Apple keeps adding cool new softw=
+are features, there still isn't an immediate, obvious reason to buy a Visio=
+n Pro.
                                 </span>
 </span>
 </div>
@@ -1105,24 +1083,23 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Ftechcrunch.com%2F2024%2F12%2F22%2Fpalantir-and-anduril-=
-reportedly-building-a-tech-consortium-to-bid-on-defense-contracts%2F%3Futm_=
-source=3Dtldrnewsletter/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be9=
-2dc3-000000/eRctT5GbYn6ZThojzONkwitVGfYybgw_3qWIkG_Ebjg=3D384">
+com/CL0/https:%2F%2Fwww.theguardian.com%2Fscience%2F2024%2Fdec%2F26%2Fscien=
+tists-explore-longevity-drugs-for-dogs-that-could-also-extend-human-life%3F=
+utm_source=3Dtldrnewsletter/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1=
+faeda75e-000000/rfe86TY6askYwKjmH1AGsGCzd8aotE7CdtN4Cfk_ijI=3D385">
                                     <span>
-                                        <strong>Palantir and Anduril report=
-edly building a tech consortium to bid on defense contracts (1 minute read)=
-</strong>
+                                        <strong>Scientists explore longevit=
+y drugs for dogs that could also =E2=80=98extend human life' (5 minute read=
+)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    Palantir and Anduril are talking to tec=
-h companies, including SpaceX, OpenAI, Saronic, and Scale AI, about forming=
- a consortium to bid on Pentagon contracts to challenge the dominance of 'p=
-rime' defense contractors like Lockheed Martin, Raytheon, and Boeing.
+                                    Loyal, a US biotech start-up, plans to =
+release LOY-002, a pill that could give dogs a minimum of one extra year of=
+ healthy life, early next year.
                                 </span>
 </span>
 </div>
@@ -1134,21 +1111,20 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2Fgy78F5/1/01000193f3410743-cd=
-94f93e-ba03-426f-ac2d-f8d65be92dc3-000000/v0uObUDmgN_NUVTfNESBSctV4ZNqOfyb1=
-knJX-BQ98g=3D384">
+com/CL0/https:%2F%2Faphyr.com%2Fposts%2F378-seconds-since-the-epoch%3Futm_s=
+ource=3Dtldrnewsletter/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda=
+75e-000000/lY8TiEQYnx-Mn6nS9cK8jOaMsq5E8hUiQgQTWjJ7X5g=3D385">
                                     <span>
-                                        <strong>Are Amazon's Drones Finally=
- Ready for Prime Time? (17 minute read)</strong>
+                                        <strong>Seconds Since the Epoch (6 =
+minute read)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    Amazon hopes to one day deliver million=
-s of packages to customers in 30 minutes or less using its drone delivery s=
-ervice.
+                                    POSIX time assumes the length of the da=
+y is 86,400 seconds, which is not always true.
                                 </span>
 </span>
 </div>
@@ -1160,20 +1136,20 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Fwww.greptile.com%2Fblog%2Fmake-llms-shut-up%3Futm_sourc=
-e=3Dtldrnewsletter/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-=
-000000/-S9EwopC8-DfPzY09oyAKlynCTx8eF88S6qEWj9tSQo=3D384">
+com/CL0/https:%2F%2Fthreadreaderapp.com%2Fthread%2F1872276861675286864.html=
+%3Futm_source=3Dtldrnewsletter/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b=
+8d1faeda75e-000000/TPghRc9M7plEzs0SGrN0F-1FHLllOI77pXd4f54NS18=3D385">
                                     <span>
-                                        <strong>How to Make LLMs Shut Up (5=
- minute read)</strong>
+                                        <strong>Some notes on the DeepSeek-=
+V3 Technical Report :) (2 minute read)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    A clustering technique helped Greptile =
-reduce the number of comments that its AI was generating.
+                                    DeepSeek-V3's training only cost $5.576=
+ million - it took around 55 days on a 2048xH800 cluster.
                                 </span>
 </span>
 </div>
@@ -1185,21 +1161,21 @@ dth=3D"100%"><tbody><tr><td class=3D"container" style=3D"padding: 15px 15px=
 <div class=3D"text-block">
 <span>
                                 <a href=3D"https://tracking.tldrnewsletter.=
-com/CL0/https:%2F%2Ftracydurnell.com%2F2024%2F12%2F17%2Fin-praise-of-the-hu=
-ndred-page-idea%2F%3Futm_source=3Dtldrnewsletter/1/01000193f3410743-cd94f93=
-e-ba03-426f-ac2d-f8d65be92dc3-000000/6Xf56QS8MAutmymmvP-EVC463kiUkPcZRIWAhY=
-70f2s=3D384">
+com/CL0/https:%2F%2Fwww.potaroo.net%2Fispcol%2F2024-12%2Fnameservers.html%3=
+Futm_source=3Dtldrnewsletter/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d=
+1faeda75e-000000/nZcWmTGsR6vr7AUmsXEcckvCRxZnTsO-9n0uJRtJ3EE=3D385">
                                     <span>
-                                        <strong>In praise of the hundred pa=
-ge idea (3 minute read)</strong>
+                                        <strong>DNS Nameservers (19 minute =
+read)</strong>
                                     </span>
 </a>
 <br>
 <br>
 <span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, V=
 erdana, sans-serif;">
-                                    100 pages is about the perfect size for=
- a book - it lets ideas be substantial, but not substantiated to death.
+                                    The optimal approach for a domain when =
+considering both performance and operational resilience is for the domain t=
+o be served by two distinct dual-stack diverse anycast nameservers.
                                 </span>
 </span>
 </div>
@@ -1225,16 +1201,16 @@ Share your referral link below with friends to get free TLDR swag!
 <tr><td align=3D"left" style=3D"padding: 10px;">
 <div class=3D"text-block">
 <a href=3D"https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.t=
-ech%2F113accd9%2F/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-0=
-00000/j6bhYjvYfli0tnHh6IHxMQvJexKJ8I1XG1XP3EDgVXA=3D384" style=3D"color: #4=
+ech%2F113accd9%2F/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-0=
+00000/q8ECDyirI7ebf6hqIxCN-XFHhi76Omif5D1GxHyXmB4=3D385" style=3D"color: #4=
 64ba4; text-decoration: underline;">https://refer.tldr.tech/113accd9/</a>
 </div>
 </td></tr>
 <tr></tr>
 <tr><td align=3D"left" style=3D"padding:5px 10px;">
 <a href=3D"https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.=
-co%2Fsub_37eb506c46bc%2F1/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65b=
-e92dc3-000000/vMm4kxQ_QZwQ9T62rk6WEWRp6PZHE_4Olrj6wZP4eM8=3D384" style=3D"f=
+co%2Fsub_37eb506c46bc%2F1/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1fa=
+eda75e-000000/RO2-MiYd5PJgj0f2-0UQPiDdxGzmBaDY2EVTxVqtchc=3D385" style=3D"f=
 ont-size: 16px; line-height: 1.6;  padding: 10px 0; display: inline-block; =
  text-decoration: underline;"><span style=3D"mso-text-raise:13pt; text-deco=
 ration: underline;">Track your referrals here.</span></a>
@@ -1257,9 +1233,9 @@ Want to advertise in TLDR? =F0=9F=93=B0
 If your company is interested in reaching an audience of tech executives, d=
 ecision-makers and engineers, you may want to <a href=3D"https://tracking.t=
 ldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=3Dtld=
-r%26utm_medium=3Dnewsletter%26utm_campaign=3Dadvertisecta/1/01000193f341074=
-3-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000/2K7xbCqJLa6QQN8jTvXcs6ZpI86pV=
-O41IYcWqnK74o8=3D384"><strong><span>advertise with us</span></strong></a>.
+r%26utm_medium=3Dnewsletter%26utm_campaign=3Dadvertisecta/1/0100019407da523=
+6-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000/ndlXivobvteZXATEfKOwt5DofYlx6=
+pZqJDh1JYlVM64=3D385"><strong><span>advertise with us</span></strong></a>.
 </div>
 <br>
 <div class=3D"text-block">
@@ -1281,14 +1257,14 @@ ng: 15px 15px;">
 ture editions of TLDR, please <a href=3D"https://tracking.tldrnewsletter.co=
 m/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=3D1%26l=3Dcfa2d55=
 a-b7be-11e8-a3c9-06b79b628af2%26lc=3D502a46e6-96f7-11ea-a3d0-06b4694bee2a%2=
-6p=3Deb259824-c0fd-11ef-a531-03d583030557%26pt=3Dcampaign%26pv=3D4%26spa=3D=
-1734951673%26t=3D1734952945%26s=3D49d846a390c100286e2ffe55a64c3f623b420a0dd=
-1f1db621e8c58b2b257400a/1/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be9=
-2dc3-000000/bDWJbRymg3ZLyrHnI2-iLDZV5F6UZePUhzGnTIHMcfo=3D384">unsubscribe =
+6p=3Deeca5de0-c425-11ef-8314-5b2b2d34e198%26pt=3Dcampaign%26pv=3D4%26spa=3D=
+1735297268%26t=3D1735298535%26s=3D48e47699029cd60db4db6a1fe5e3d8a044c56ec7b=
+fee2ba2040a9c0cac8b5030/1/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faed=
+a75e-000000/S6Q2-h9lokqKNVL8YoWmbLrBIQmuLXy2TLNLfMYf7VA=3D385">unsubscribe =
 from TLDR</a> or <a href=3D"https://tracking.tldrnewsletter.com/CL0/https:%=
 2F%2Ftldr.tech%2Ftech%2Fmanage%3Femail=3Ddaniel.m.halverson%2540gmail.com/1=
-/01000193f3410743-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000/ge2P6IzGwki9m=
-kLGy8sYIj9jlihEZdxyj1fmEop7E4w=3D384">manage all of your TLDR newsletter su=
+/0100019407da5236-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000/10FBTzKQMUdTp=
+4m1McJm5H0NjlvIGR6aHbLIs_75APs=3D385">manage all of your TLDR newsletter su=
 bscriptions</a>.
 <br>
 </div>
@@ -1300,8 +1276,8 @@ bscriptions</a>.
 
 
 
-<img alt=3D"" src=3D"http://tracking.tldrnewsletter.com/CI0/01000193f341074=
-3-cd94f93e-ba03-426f-ac2d-f8d65be92dc3-000000/DfQNdFgyeCThRiv5GP8bccpWsNvoS=
-R7nfHhM_z7KxDs=3D384" style=3D"display: none; width: 1px; height: 1px;">
+<img alt=3D"" src=3D"http://tracking.tldrnewsletter.com/CI0/0100019407da523=
+6-ce588a2e-dfc5-4e71-8b33-b8d1faeda75e-000000/LOGObtCAoC1CDhxVU2g8iTXFfEioi=
+5htlY5viBSVj_M=3D385" style=3D"display: none; width: 1px; height: 1px;">
 </body></html>
---2F7WE5aZ--
+--vDDuxR3L--

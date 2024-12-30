@@ -2,9 +2,11 @@
 
 import os, json
 from typing import List
+from operator import itemgetter
 
 from fastapi import FastAPI
 from langchain_core.prompts import PromptTemplate
+from langchain_core.runnables import RunnableLambda
 from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
 from langchain_core.output_parsers import JsonOutputParser
@@ -18,18 +20,11 @@ from botocore.exceptions import ClientError
 
 load_dotenv()
 
-# Use this code snippet in your app.
-# If you need more information about configurations
-# or implementing the sample code, visit the AWS docs:
-# https://aws.amazon.com/developer/language/python/
-
-
 def get_secret():
 
     secret_name = "prod/openai"
     region_name = "us-east-1"
 
-    # Create a Secrets Manager client
     session = boto3.session.Session()
     client = session.client(
         service_name='secretsmanager',
@@ -79,7 +74,18 @@ prompt = PromptTemplate(
     """
 )
 
-chain = prompt | llm | parser
+def remove_escape(text):
+    return text.replace('\"', '"')
+
+chain = (
+    {
+        "document_text": itemgetter("document_text") | RunnableLambda(remove_escape),
+        "keywords": itemgetter("keywords")
+    } 
+    | prompt 
+    | llm 
+    | parser
+)
 
 add_routes(
     app, chain.with_types(input_type=Input), path="/keyword-processor"
